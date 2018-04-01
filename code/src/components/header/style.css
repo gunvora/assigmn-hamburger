@@ -9,7 +9,51 @@ header a {
   padding: 10px;
 }
 
+a{
+  display: flex;
+  flex-direction: column;
+}
+
 .header-grid {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: green;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hamburger-checkbox {
+  display: none;
+}
+
+@media (max-width: 600px) {
+
+  .hamburger-lable {
+      width: 35px;
+      height:5px;
+      display: block;
+      background-color: black;
+      margin: 8px 0;
+      cursor: pointer;
+  }
+
+  .menu {
+    background: #ffdfe7;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 100%;
+    left: -100%;
+    margin-top: 100px;
+    transition: all 0.3s ease-out;
+  }
+
+  .hamburger-checkbox:checked + .menu {
+    left: 0;
+  }
 }
